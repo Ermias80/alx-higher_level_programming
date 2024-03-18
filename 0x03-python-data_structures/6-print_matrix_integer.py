@@ -3,9 +3,15 @@ def print_matrix_integer(matrix=[[]]):
     if not matrix:
         print()
     else:
-        for row in matrix:
-            for col_idx, num in enumerate(row):
-                if col_idx != len(row) - 1:
-                    print("{:d} ".format(num), end="")
+        row = 0
+        while row < len(matrix):
+            col_idx = 0
+            while col_idx < len(matrix[row]):
+                if col_idx != len(matrix[row]) - 1:
+                    endspace = ' '
                 else:
-                    print("{:d}".format(num))
+                    endspace = ''
+                print("{:d}".format(matrix[row][col_idx]), end=endspace)
+                col_idx += 1
+            print()
+            row += 1
