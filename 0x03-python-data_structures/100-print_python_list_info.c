@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <Python.h>
 
 /**
  * print_python_list_info -  function that prints some basic
@@ -19,4 +18,3 @@ void print_python_list_info(PyObject *p)
         printf("Element %d: %s\n", elem, Py_TYPE(item)->tp_name);
     }
 }
-
