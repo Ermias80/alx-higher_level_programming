@@ -63,5 +63,5 @@ class Square:
         for _ in range(self.__position[1]):
             lines.append("\n")
         for _ in range(self.__size):
-            lines.append(" " * self.__position[0] + "#" * self.__size)
+            lines.append(" " * self.__position[0] + "#" * self.__size + "\n")
         return "".join(lines)
