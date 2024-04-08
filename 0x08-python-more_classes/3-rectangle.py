@@ -4,6 +4,8 @@ Defines a class Rectangle
 """
 class Rectangle:
     """Defines a rectangle"""
+class Rectangle:
+    """Defines a rectangle"""
 
     def __init__(self, width=0, height=0):
         """Initialize the rectangle"""
@@ -58,4 +60,4 @@ class Rectangle:
 
     def __repr__(self):
         """Representation of the rectangle"""
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        return "<{} object at {}>".format(self.__class__.__name__, hex(id(self)))
