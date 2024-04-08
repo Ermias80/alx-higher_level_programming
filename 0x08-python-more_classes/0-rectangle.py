@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This class represents a rectangle
+This class represents an empty class
 """
 class Rectangle:
     """Empty rectangle"""
