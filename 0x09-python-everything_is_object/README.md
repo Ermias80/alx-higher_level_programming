@@ -1,0 +1,3 @@
+This is an answer for 0x09-python-everything is object as we Know in Python, an object is a collection of data (variables) and methods (functions) that operate on the data. Everything in Python is an object, which means that even simple data types like integers, strings, lists, and functions are objects.
+
+An object is an instance of a class. A class is a blueprint or template for creating objects. It defines the properties (attributes) and behaviors (methods) that all objects of that class will have. When you create an object from a class, it is called instantiation, and the object is said to be an instance of that class.
