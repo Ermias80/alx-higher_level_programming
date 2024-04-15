@@ -1,20 +1,10 @@
 #!/usr/bin/python3
-"""
-Defines the MyInt class
-"""
+""" add_attribute module """
 
 
-class MyInt(int):
-    """A rebel version of an integer, perfect for opposite day!"""
-
-    def __new__(cls, *args, **kwargs):
-        """Create a new instance of the class"""
-        return super(MyInt, cls).__new__(cls, *args, **kwargs)
-
-    def __eq__(self, other):
-        """Override the equality comparison operator"""
-        return int(self) != other
-
-    def __ne__(self, other):
-        """Override the inequality comparison operator"""
-        return int(self) == other
+def add_attribute(prmObject, prmName, prmValue):
+    """ add_attribute function """
+    if not hasattr(prmObject, "__dict__"):
+        raise TypeError("can't add new attribute")
+    if (not hasattr(prmObject, prmName)):
+        prmObject.__setattr__(prmName, prmValue)
