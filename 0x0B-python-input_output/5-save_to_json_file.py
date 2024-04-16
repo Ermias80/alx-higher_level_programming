@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-"""Save to JSON file module"""
+"""Save to JSON file module
+
+Writes an object to a text file using a JSON representation.
+"""
 
 
 def save_to_json_file(my_obj, filename):
     """save_to_json_file
 
-    Writes an object to a text file using a JSON representation.
 
     Args:
         my_obj: The object to be serialized to JSON.
