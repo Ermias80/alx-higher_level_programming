@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 class Student:
     """Class that defines a student"""
 
@@ -23,9 +21,13 @@ class Student:
         if attrs is None:
             return self.__dict__
         else:
-            return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
+            json_dict = {}
+            for attr in attrs:
+                if hasattr(self, attr):
+                    json_dict[attr] = getattr(self, attr)
+            return json_dict
 
     def reload_from_json(self, json):
         """Replaces all attributes of the Student instance with values from a dictionary."""
         for key, value in json.items():
-            setattr(self, key, value)
+            self.__dict__[key] = value
