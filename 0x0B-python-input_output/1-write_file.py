@@ -3,7 +3,7 @@
 
 
 def write_file(filename="", text=""):
-     """write_file
+    """write_file
 
     writes to a file
 
@@ -11,6 +11,6 @@ def write_file(filename="", text=""):
         filename (file): file object to write to
         text (str): test to write
     """
-    with open(filename, 'w', encoding='utf-8') as file:
-        chars = file.write(text)
-        return chars
+    with open(filename, "w", encoding="utf-8") as f:
+        ch = f.write(text)
+        return ch
