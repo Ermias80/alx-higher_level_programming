@@ -12,4 +12,5 @@ def write_file(filename="", text=""):
         text (str): test to write
     """
     with open(filename, 'w', encoding='utf-8') as file:
-        return file.write(text)
+        chars = file.write(text)
+        return chars
