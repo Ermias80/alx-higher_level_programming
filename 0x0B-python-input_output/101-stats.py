@@ -1,21 +1,59 @@
 #!/usr/bin/python3
 """
-Log parsing script that computes metrics from stdin input.
+101-stats
+    Reads from standard input and computes metrics
 """
 
 import sys
 
-def print_metrics(total_size, status_codes):
-    """Prints the computed metrics."""
-    print("File size: {}".format(total_size))
-    for code, count in sorted(status_codes.items()):
-        if count:
-            print("{}: {}".format(code, count))
 
-def parse_input(line):
-    """Parses a line of input and returns the IP address, status code, and file size."""
-    parts = line.split()
-    ip_address = parts[0]
-    status_code = parts[-2]
-    file_size = parts[-1]
-    return ip_address, status_code, int(file_size)
+def print_stats():
+    """Prints metrics
+    """
+    print('File size: {:d}'.format(file_size))
+
+    for scode, code_times in sorted(status_codes.items()):
+        if code_times > 0:
+            print('{}: {:d}'.format(scode, code_times))
+
+
+status_codes = {
+    '200': 0,
+    '301': 0,
+    '400': 0,
+    '401': 0,
+    '403': 0,
+    '404': 0,
+    '405': 0,
+    '500': 0
+}
+
+lc = 0
+file_size = 0
+
+try:
+    for line in sys.stdin:
+        if lc != 0 and lc % 10 == 0:
+            print_stats()
+
+        pieces = line.split()
+
+        try:
+            status = int(pieces[-2])
+
+            if str(status) in status_codes.keys():
+                status_codes[str(status)] += 1
+        except (IndexError, ValueError) as e:
+            pass
+
+        try:
+            file_size += int(pieces[-1])
+        except (IndexError, ValueError) as e:
+            pass
+
+        lc += 1
+
+    print_stats()
+except KeyboardInterrupt:
+    print_stats()
+    raise
