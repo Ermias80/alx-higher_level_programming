@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-""" Module that defines the class Student
-"""
+"""Module that defines the class Student."""
 
 
 class Student:
-    """Class that defines a student"""
+    """Class that defines a student."""
     def __init__(self, first_name, last_name, age):
         """Initializes a student with first name, last name, and age."""
         self.first_name = first_name
@@ -20,7 +19,6 @@ class Student:
 
         Returns:
             dict: A dictionary representing the Student instance.
-
         """
         if attrs is None:
             return self.__dict__
