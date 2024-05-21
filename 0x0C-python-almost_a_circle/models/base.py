@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Base Module
+"""This is the Base Module
 """
 import json
 import csv
@@ -8,7 +8,7 @@ from random import choice
 
 
 class Base:
-    """Base class
+    """Class for Base
 
     Attributes:
         __nb_objects (int): provate class attribute
