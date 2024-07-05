@@ -25,3 +25,4 @@ if __name__ == "__main__":
             for commit in response.json():
                 commit_sha = commit['sha']
                 commit_author = commit['commit']['author']['name']
+                print('{}: {}'.format(commit_sha, commit_author))
